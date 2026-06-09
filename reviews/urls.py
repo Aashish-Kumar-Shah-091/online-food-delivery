@@ -1,8 +1,7 @@
-from django.contrib import admin
 from django.urls import path
-from . views import review_list, add_review
+from .views import review_list, add_review
 
 urlpatterns = [
-    path('reviews/',review_list),
-    path('reviews/',add_review)
+    path('', review_list, name='review_list'),
+    path('add/<int:food_id>/', add_review, name='add_review'),
 ]
